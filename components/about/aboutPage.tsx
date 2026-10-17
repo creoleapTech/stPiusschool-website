@@ -1,6 +1,6 @@
 import { useCmsAsset } from "@/lib/useCmsCollection"
 const DEFAULT_PRINCIPAL_PHOTO = "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/principal.JPG"
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Users,
   GraduationCap,
@@ -124,10 +124,10 @@ const AboutPage: React.FC = () => {
 
   // Leadership team
   const leadership: Leader[] = [
-    { id: 1, name: "Rev. Fr. John Mathew", position: "Principal & Director", experience: "25 Years Experience", specialty: ["Spiritual Leadership", "Academic Administration"], color: "from-blue-600 to-blue-800", quote: "Education is the kindling of a flame, not the filling of a vessel.", cmsKey: "about:leader_0" },
+    { id: 1, name: "Rev. Fr. Norbert D'souza", position: "Principal & Director", experience: "25 Years Experience", specialty: ["Spiritual Leadership", "Academic Administration"], color: "from-blue-600 to-blue-800", quote: "Education is the kindling of a flame, not the filling of a vessel.", cmsKey: "about:leader_0" },
     // { id: 2, name: "Mrs. Susan Rodrigues", position: "Vice Principal", experience: "18 Years Experience", specialty: ["Curriculum Development", "Student Welfare"], color: "from-cyan-500 to-cyan-700", quote: "Every child deserves a champion who believes in them.", cmsKey: "about:leader_1" },
-    { id: 3, name: "Mr. Thomas Kurien", position: "Academic Dean", experience: "15 Years Experience", specialty: ["Science Education", "Research Programs"], color: "from-blue-600 to-blue-800", quote: "Learning is not attained by chance, it must be sought with ardor.", cmsKey: "about:leader_2" },
-    { id: 4, name: "Ms. Mary Thomas", position: "Head of Student Affairs", experience: "12 Years Experience", specialty: ["Student Development", "Extra-curricular"], color: "from-cyan-500 to-cyan-700", quote: "The goal of education is not to increase knowledge but to create possibilities.", cmsKey: "about:leader_3" }
+    { id: 2, name: "Mr. Thomas Kurien", position: "Academic Dean", experience: "15 Years Experience", specialty: ["Science Education", "Research Programs"], color: "from-blue-600 to-blue-800", quote: "Learning is not attained by chance, it must be sought with ardor.", cmsKey: "about:leader_2" },
+    // { id: 4, name: "Ms. Mary Thomas", position: "Head of Student Affairs", experience: "12 Years Experience", specialty: ["Student Development", "Extra-curricular"], color: "from-cyan-500 to-cyan-700", quote: "The goal of education is not to increase knowledge but to create possibilities.", cmsKey: "about:leader_3" }
   ];
 
   // House System
@@ -813,15 +813,15 @@ const AboutPage: React.FC = () => {
             <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4" data-cms="about:leadership_title">Educational Leadership</h2>
             <p className="text-slate-600 dark:text-slate-400" data-cms="about:leadership_subtitle">Guided by visionaries and experienced educators</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex  w-full  justify-center  gap-8">
             {leadership.map((leader, i) => (
               <div key={leader.id} className="group bg-white dark:bg-slate-900/40 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all">
                 <div className={`h-2 bg-gradient-to-r ${leader.color}`}></div>
                 <div className="p-8">
-                  <div className={`w-20 h-20 mx-auto mb-6 bg-gradient-to-br ${leader.color} rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg`}>
+                  {/* <div className={`w-20 h-20 mx-auto mb-6 bg-gradient-to-br ${leader.color} rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg`}>
                     {leader.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white text-center mb-1" data-cms={`${leader.cmsKey}:name`}>{leader.name}</h3>
+                  </div> */}
+                  <h3 className="text-3xl font-black text-slate-900 dark:text-white text-center mb-1" data-cms={`${leader.cmsKey}:name`}>{leader.name}</h3>
                   <p className="text-blue-600 dark:text-cyan-400 font-bold text-sm text-center mb-4" data-cms={`${leader.cmsKey}:position`}>{leader.position}</p>
                   <div className="flex flex-wrap gap-2 justify-center mb-6">
                     {leader.specialty.map((s, idx) => (
@@ -843,12 +843,12 @@ const AboutPage: React.FC = () => {
             <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4" data-cms="about:house_title">House System</h2>
             <p className="text-slate-600 dark:text-slate-400" data-cms="about:house_subtitle">Fostering teamwork, leadership, and healthy competition</p>
           </div>
-          
+
           {/* Mistress of Houses */}
           <div className="mb-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-3xl p-8 text-white">
             <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center text-3xl font-bold">
-                CD
+              <div data-cms="about:house_incharge_image" className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center text-3xl font-bold">
+                <img src="" alt="" className="w-full h-full rounded-full bg-white" />
               </div>
               <div className="text-center md:text-left">
                 <h3 className="text-2xl font-bold mb-2" data-cms="about:house_incharge_name">Mrs. Cheryl Dsouza</h3>
