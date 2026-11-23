@@ -1088,10 +1088,10 @@ const AboutPage: React.FC = () => {
                               {achievement.icon}
                             </div>
                             <div className="flex-1">
-                              <p data-cms-src={`about:${achievement.textsrc}`} className="font-bold text-white text-lg leading-tight mb-1">
+                              <p data-cms={`about:${achievement.textsrc}:text`} className="font-bold text-white text-lg leading-tight mb-1">
                                 {achievement.text}
                               </p>
-                              <span data-cms-src={`about:${achievement.spansrc}`} className="text-orange-100 text-sm font-medium">
+                              <span data-cms={`about:${achievement.spansrc}:span`} className="text-orange-100 text-sm font-medium">
                                 Excellence recognized
                               </span>
                             </div>
@@ -1106,8 +1106,8 @@ const AboutPage: React.FC = () => {
                     {/* Bottom Stat */}
                     <div className="mt-8 pt-6 border-t border-white/20">
                       <div className="text-center">
-                        <div data-cms-src="about:right_stat" className="text-5xl font-black text-white mb-2">50+</div>
-                        <p data-cms-src="about:right_span" className="text-orange-100 font-semibold">Years of Educational Excellence</p>
+                        <div data-cms="about:right_stat:text" className="text-5xl font-black text-white mb-2">50+</div>
+                        <p data-cms="about:right_span:text" className="text-orange-100 font-semibold">Years of Educational Excellence</p>
                       </div>
                     </div>
                   </div>
@@ -1123,10 +1123,10 @@ const AboutPage: React.FC = () => {
               className="grid grid-cols-2 md:grid-cols-4 gap-6"
             >
               {[
-                { number: "15,000+", label: "Alumni Worldwide", icon: "👥", cmsKey: "about:bottom_stat_0" },
-                { number: "100+", label: "Expert Faculty", icon: "👨‍🏫", cmsKey: "about:bottom_stat_1" },
-                { number: "2,500+", label: "Current Students", icon: "📚", cmsKey: "about:bottom_stat_2" },
-                { number: "40+", label: "Countries Represented", icon: "🌍", cmsKey: "about:bottom_stat_3" }
+                { number: "15,000+", label: "Alumni Worldwide", icon: "👥", cmsKey: "about:bottom_stat_0", cmsNum: "about:bottom_stat_0" },
+                { number: "100+", label: "Expert Faculty", icon: "👨‍🏫", cmsKey: "about:bottom_stat_1", cmsNum: "about:bottom_stat_1" },
+                { number: "2,500+", label: "Current Students", icon: "📚", cmsKey: "about:bottom_stat_2", cmsNum: "about:bottom_stat_2" },
+                { number: "40+", label: "Countries Represented", icon: "🌍", cmsKey: "about:bottom_stat_3", cmsNum: "about:bottom_stat_3" }
               ].map((stat, idx) => (
                 <motion.div
                   key={idx}
@@ -1134,7 +1134,7 @@ const AboutPage: React.FC = () => {
                   className="bg-white rounded-2xl p-6 border border-gray-100 shadow-lg hover:shadow-xl transition-all text-center group"
                 >
                   <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
-                  <div className="text-2xl sm:text-3xl font-black text-gray-900 mb-1">{stat.number}</div>
+                  <div className="text-2xl sm:text-3xl font-black text-gray-900 mb-1" data-cms={`${stat.cmsNum}:stat`}>{stat.number}</div>
                   <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide" data-cms={`${stat.cmsKey}:label`}>{stat.label}</div>
                 </motion.div>
               ))}
