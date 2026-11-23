@@ -1061,18 +1061,18 @@ const AboutPage: React.FC = () => {
                       <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30 mb-4">
                         <Trophy className="w-8 h-8 text-white" />
                       </div>
-                      <h3 data-cms-src="about:right:heading" className="text-3xl font-black text-white mb-2">Key Milestones</h3>
-                      <p data-cms-src="about:right:subheading" className="text-orange-100 text-sm font-medium">Celebrating 50+ years of achievements</p>
+                      <h3 data-cms-src="about:right_heading" className="text-3xl font-black text-white mb-2">Key Milestones</h3>
+                      <p data-cms-src="about:right_subheading" className="text-orange-100 text-sm font-medium">Celebrating 50+ years of achievements</p>
                     </div>
 
                     {/* Achievements List */}
                     <div className="space-y-4 flex-1">
                       {[
-                        { icon: "🎖️", text: "Consistently Ranked Top 10 in State", stat: "#1", textsrc: "achievement1:text", spansrc: "achievement1:span" },
-                        { icon: "🎓", text: "95% Graduate University Placement", stat: "95%", textsrc: "achievement2:text", spansrc: "achievement2:span" },
-                        { icon: "⚽", text: "National Excellence in Sports Award", stat: "50+", textsrc: "achievement3:text", spansrc: "achievement3:span" },
-                        { icon: "🕊️", text: "Pioneer in Interfaith Education", stat: "1st", textsrc: "achievement4:text", spansrc: "achievement4:span" },
-                        { icon: "🌱", text: "Green Campus Platinum Certification", stat: "★★★", textsrc: "achievement5:text", spansrc: "achievement5:span" }
+                        { icon: "🎖️", text: "Consistently Ranked Top 10 in State", stat: "#1", textsrc: "achievement_text1", spansrc: "achievement_span1" },
+                        { icon: "🎖️", text: "95% Graduate University Placement", stat: "95%", textsrc: "achievement_text2", spansrc: "achievement_span2" },
+                        { icon: "🎖️", text: "National Excellence in Sports Award", stat: "50+", textsrc: "achievement_text3", spansrc: "achievement_span3" },
+                        { icon: "🎖️", text: "Pioneer in Interfaith Education", stat: "1st", textsrc: "achievement_text4", spansrc: "achievement_span4" },
+                        { icon: "🎖️", text: "Green Campus Platinum Certification", stat: "★★★", textsrc: "achievement_text5", spansrc: "achievement_span5" }
                       ].map((achievement, idx) => (
                         <motion.div
                           key={idx}
@@ -1088,10 +1088,10 @@ const AboutPage: React.FC = () => {
                               {achievement.icon}
                             </div>
                             <div className="flex-1">
-                              <p data-cms-src={`about:right:${achievement.textsrc}`} className="font-bold text-white text-lg leading-tight mb-1">
+                              <p data-cms-src={`about:${achievement.textsrc}`} className="font-bold text-white text-lg leading-tight mb-1">
                                 {achievement.text}
                               </p>
-                              <span data-cms-src={`about:right:${achievement.spansrc}`} className="text-orange-100 text-sm font-medium">
+                              <span data-cms-src={`about:${achievement.spansrc}`} className="text-orange-100 text-sm font-medium">
                                 Excellence recognized
                               </span>
                             </div>
@@ -1106,8 +1106,8 @@ const AboutPage: React.FC = () => {
                     {/* Bottom Stat */}
                     <div className="mt-8 pt-6 border-t border-white/20">
                       <div className="text-center">
-                        <div data-cms-src="about:right:stat" className="text-5xl font-black text-white mb-2">50+</div>
-                        <p data-cms-src="about:right:span" className="text-orange-100 font-semibold">Years of Educational Excellence</p>
+                        <div data-cms-src="about:right_stat" className="text-5xl font-black text-white mb-2">50+</div>
+                        <p data-cms-src="about:right_span" className="text-orange-100 font-semibold">Years of Educational Excellence</p>
                       </div>
                     </div>
                   </div>
