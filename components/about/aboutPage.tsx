@@ -848,7 +848,7 @@ const AboutPage: React.FC = () => {
           <div className="mb-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-3xl p-8 text-white">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div data-cms="about:house_incharge_image" className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center text-3xl font-bold">
-                <img data-cms-src={`about:house_incharge_image`} src="" alt="" className="w-full h-full rounded-full bg-white" />
+                <img data-cms-src="about:house_incharge_img" src="" alt="" className="w-full h-full rounded-full bg-white" />
               </div>
               <div className="text-center md:text-left">
                 <h3 className="text-2xl font-bold mb-2" data-cms="about:house_incharge_name">Mrs. Cheryl Dsouza</h3>
@@ -1061,8 +1061,8 @@ const AboutPage: React.FC = () => {
                       <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30 mb-4">
                         <Trophy className="w-8 h-8 text-white" />
                       </div>
-                      <h3 data-cms-src="about:right_heading" className="text-3xl font-black text-white mb-2">Key Milestones</h3>
-                      <p data-cms-src="about:right_subheading" className="text-orange-100 text-sm font-medium">Celebrating 50+ years of achievements</p>
+                      <h3 data-cms="about:right_heading" className="text-3xl font-black text-white mb-2">Key Milestones</h3>
+                      <p data-cms="about:right_subheading" className="text-orange-100 text-sm font-medium">Celebrating 50+ years of achievements</p>
                     </div>
 
                     {/* Achievements List */}
