@@ -848,7 +848,7 @@ const AboutPage: React.FC = () => {
           <div className="mb-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-3xl p-8 text-white">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div data-cms="about:house_incharge_image" className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center text-3xl font-bold">
-                <img src="" alt="" className="w-full h-full rounded-full bg-white" />
+                <img data-cms-src={`about:house_incharge_image`} src="" alt="" className="w-full h-full rounded-full bg-white" />
               </div>
               <div className="text-center md:text-left">
                 <h3 className="text-2xl font-bold mb-2" data-cms="about:house_incharge_name">Mrs. Cheryl Dsouza</h3>
@@ -1147,3 +1147,5 @@ const AboutPage: React.FC = () => {
 };
 
 export default AboutPage;
+
+
