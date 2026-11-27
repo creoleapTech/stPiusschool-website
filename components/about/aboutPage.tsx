@@ -847,8 +847,14 @@ const AboutPage: React.FC = () => {
           {/* Mistress of Houses */}
           <div className="mb-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-3xl p-8 text-white">
             <div className="flex flex-col md:flex-row items-center gap-6">
-              <div data-cms="about:house_incharge_image" className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center text-3xl font-bold">
-                <img data-cms-src="about:house_incharge_img" src="" alt="" className="w-full h-full rounded-full bg-white" />
+              <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center text-3xl font-bold overflow-hidden">
+                <img
+                  data-cms-src="about:house_incharge_image"
+                  data-cms-label="House Incharge Photo"
+                  src=""
+                  alt="Mrs. Cheryl Dsouza"
+                  className="w-full h-full rounded-full object-cover bg-white"
+                />
               </div>
               <div className="text-center md:text-left">
                 <h3 className="text-2xl font-bold mb-2" data-cms="about:house_incharge_name">Mrs. Cheryl Dsouza</h3>
@@ -1061,18 +1067,18 @@ const AboutPage: React.FC = () => {
                       <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30 mb-4">
                         <Trophy className="w-8 h-8 text-white" />
                       </div>
-                      <h3 data-cms="about:right_heading" className="text-3xl font-black text-white mb-2">Key Milestones</h3>
-                      <p data-cms="about:right_subheading" className="text-orange-100 text-sm font-medium">Celebrating 50+ years of achievements</p>
+                      <h3 data-cms="about:right_heading" data-cms-label="Key Milestones Heading" className="text-3xl font-black text-white mb-2">Key Milestones</h3>
+                      <p data-cms="about:right_subheading" data-cms-label="Key Milestones Subheading" className="text-orange-100 text-sm font-medium">Celebrating 50+ years of achievements</p>
                     </div>
 
                     {/* Achievements List */}
                     <div className="space-y-4 flex-1">
                       {[
-                        { icon: "🎖️", text: "Consistently Ranked Top 10 in State", stat: "#1", textsrc: "achievement_text1", spansrc: "achievement_span1" },
-                        { icon: "🎖️", text: "95% Graduate University Placement", stat: "95%", textsrc: "achievement_text2", spansrc: "achievement_span2" },
-                        { icon: "🎖️", text: "National Excellence in Sports Award", stat: "50+", textsrc: "achievement_text3", spansrc: "achievement_span3" },
-                        { icon: "🎖️", text: "Pioneer in Interfaith Education", stat: "1st", textsrc: "achievement_text4", spansrc: "achievement_span4" },
-                        { icon: "🎖️", text: "Green Campus Platinum Certification", stat: "★★★", textsrc: "achievement_text5", spansrc: "achievement_span5" }
+                        { icon: "🎖️", text: "Consistently Ranked Top 10 in State", subtext: "Excellence recognized", stat: "#1", id: "1" },
+                        { icon: "🎓", text: "95% Graduate University Placement", subtext: "Excellence recognized", stat: "95%", id: "2" },
+                        { icon: "⚽", text: "National Excellence in Sports Award", subtext: "Excellence recognized", stat: "50+", id: "3" },
+                        { icon: "🕊️", text: "Pioneer in Interfaith Education", subtext: "Excellence recognized", stat: "1st", id: "4" },
+                        { icon: "🌱", text: "Green Campus Platinum Certification", subtext: "Excellence recognized", stat: "★★★", id: "5" }
                       ].map((achievement, idx) => (
                         <motion.div
                           key={idx}
@@ -1088,16 +1094,28 @@ const AboutPage: React.FC = () => {
                               {achievement.icon}
                             </div>
                             <div className="flex-1">
-                              <p data-cms={`about:${achievement.textsrc}:text`} className="font-bold text-white text-lg leading-tight mb-1">
+                              <p
+                                data-cms={`about:achievement_${achievement.id}:text`}
+                                data-cms-label={`Milestone ${achievement.id} Title`}
+                                className="font-bold text-white text-lg leading-tight mb-1"
+                              >
                                 {achievement.text}
                               </p>
-                              <span data-cms={`about:${achievement.spansrc}:span`} className="text-orange-100 text-sm font-medium">
-                                Excellence recognized
+                              <span
+                                data-cms={`about:achievement_${achievement.id}:subtext`}
+                                data-cms-label={`Milestone ${achievement.id} Subtitle`}
+                                className="text-orange-100 text-sm font-medium"
+                              >
+                                {achievement.subtext}
                               </span>
                             </div>
-                            {/* <div className="text-3xl font-black text-white/30 group-hover:text-white/50 transition-colors">
+                            <div
+                              data-cms={`about:achievement_${achievement.id}:stat`}
+                              data-cms-label={`Milestone ${achievement.id} Stat`}
+                              className="text-3xl font-black text-white/30 group-hover:text-white/50 transition-colors"
+                            >
                               {achievement.stat}
-                            </div> */}
+                            </div>
                           </div>
                         </motion.div>
                       ))}
@@ -1106,8 +1124,8 @@ const AboutPage: React.FC = () => {
                     {/* Bottom Stat */}
                     <div className="mt-8 pt-6 border-t border-white/20">
                       <div className="text-center">
-                        <div data-cms="about:right_stat:text" className="text-5xl font-black text-white mb-2">50+</div>
-                        <p data-cms="about:right_span:text" className="text-orange-100 font-semibold">Years of Educational Excellence</p>
+                        <div data-cms="about:right_stat:text" data-cms-label="Key Milestones Bottom Stat" className="text-5xl font-black text-white mb-2">50+</div>
+                        <p data-cms="about:right_span:text" data-cms-label="Key Milestones Bottom Label" className="text-orange-100 font-semibold">Years of Educational Excellence</p>
                       </div>
                     </div>
                   </div>
