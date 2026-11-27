@@ -43,6 +43,7 @@ interface Stat {
   color: string;
   description: string;
   cmsKey: string;
+  cmsTargetKey: string
 }
 
 interface Leader {
@@ -93,12 +94,12 @@ const AboutPage: React.FC = () => {
 
   // Statistics with animation targets
   const initialStats: Stat[] = [
-    { id: 1, number: 0, target: 1200, label: "Students Enrolled", icon: <Users className="w-6 h-6" />, suffix: "+", color: "from-blue-600 to-cyan-500", description: "From diverse backgrounds across the region", cmsKey: "about:stat_0" },
-    { id: 2, number: 0, target: 95, label: "Graduation Rate", icon: <GraduationCap className="w-6 h-6" />, suffix: "%", color: "from-cyan-500 to-blue-700", description: "Consistently high year after year", cmsKey: "about:stat_1" },
-    { id: 3, number: 0, target: 75, label: "Expert Faculty", icon: <Star className="w-6 h-6" />, suffix: "+", color: "from-blue-600 to-cyan-500", description: "Highly qualified and experienced educators", cmsKey: "about:stat_2" },
-    { id: 4, number: 0, target: 54, label: "Years of Excellence", icon: <Calendar className="w-6 h-6" />, suffix: "+", color: "from-cyan-500 to-blue-700", description: "Established tradition of quality education", cmsKey: "about:stat_3" },
-    { id: 5, number: 0, target: 25, label: "National Awards", icon: <Award className="w-6 h-6" />, suffix: "+", color: "from-blue-600 to-cyan-500", description: "Recognized for academic excellence", cmsKey: "about:stat_4" },
-    { id: 6, number: 0, target: 20, label: "Student Clubs", icon: <Activity className="w-6 h-6" />, suffix: "+", color: "from-cyan-500 to-blue-700", description: "Extracurricular activities and organizations", cmsKey: "about:stat_5" }
+    { id: 1, number: 0, target: 1200, label: "Students Enrolled", icon: <Users className="w-6 h-6" />, suffix: "+", color: "from-blue-600 to-cyan-500", description: "From diverse backgrounds across the region", cmsKey: "about:stat_0", cmsTargetKey: "about:target_0" },
+    { id: 2, number: 0, target: 95, label: "Graduation Rate", icon: <GraduationCap className="w-6 h-6" />, suffix: "%", color: "from-cyan-500 to-blue-700", description: "Consistently high year after year", cmsKey: "about:stat_1", cmsTargetKey: "about:target_1" },
+    { id: 3, number: 0, target: 75, label: "Expert Faculty", icon: <Star className="w-6 h-6" />, suffix: "+", color: "from-blue-600 to-cyan-500", description: "Highly qualified and experienced educators", cmsKey: "about:stat_2", cmsTargetKey: "about:target_2" },
+    { id: 4, number: 0, target: 54, label: "Years of Excellence", icon: <Calendar className="w-6 h-6" />, suffix: "+", color: "from-cyan-500 to-blue-700", description: "Established tradition of quality education", cmsKey: "about:stat_3", cmsTargetKey: "about:target_3" },
+    { id: 5, number: 0, target: 25, label: "National Awards", icon: <Award className="w-6 h-6" />, suffix: "+", color: "from-blue-600 to-cyan-500", description: "Recognized for academic excellence", cmsKey: "about:stat_4", cmsTargetKey: "about:target_4" },
+    { id: 6, number: 0, target: 20, label: "Student Clubs", icon: <Activity className="w-6 h-6" />, suffix: "+", color: "from-cyan-500 to-blue-700", description: "Extracurricular activities and organizations", cmsKey: "about:stat_5", cmsTargetKey: "about:target_5" }
   ];
 
   const [animatedStats, setAnimatedStats] = useState<Stat[]>(initialStats);
@@ -461,7 +462,7 @@ const AboutPage: React.FC = () => {
                   {stat.icon}
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-slate-900 dark:text-white">
+                  <div className="text-3xl font-bold text-slate-900 dark:text-white " data-cms={`${stat.cmsTargetKey}:target`}>
                     {stat.number}{stat.suffix}
                   </div>
                   <div className="text-sm font-bold text-blue-600 dark:text-cyan-400 uppercase tracking-wider mt-1" data-cms={`${stat.cmsKey}:label`}>{stat.label}</div>
